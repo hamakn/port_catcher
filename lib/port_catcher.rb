@@ -19,6 +19,8 @@ class PortCatcher
     true
   end
 
+  attr_reader :port_range
+
   def initialize(port_range = 1024..65535)
     @port_range = Range.new([port_range.first, 0].max, [port_range.last, 65535].min)
     @port = rand(@port_range.count) + @port_range.first
